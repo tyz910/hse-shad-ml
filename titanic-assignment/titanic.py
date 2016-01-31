@@ -2,25 +2,13 @@
 import pandas
 import re
 
-
-def print_answer(num, line, nl=False):
-    print line
-
-    if num not in files:
-        f = open('./answers/a' + str(num) + '.txt', 'w+')
-        files[num] = f
-    else:
-        f = files[num]
-
-    if nl:
-        line += '\n'
-
-    f.write(line)
+import sys
+sys.path.append("..")
+from shad_util import print_answer
 
 
 data = pandas.read_csv('titanic.csv', index_col='PassengerId')
 data['Pclass'] = data['Pclass'].astype(object)
-files = {}
 
 # 1. Какое количество мужчин и женщин ехало на корабле? В качестве ответа приведите два числа через пробел.
 
