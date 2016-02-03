@@ -6,6 +6,9 @@ class AnswerPrinter:
         self.files = {}
 
     def print_answer(self, num, line, nl=False):
+        if isinstance(line, float):
+            line = "{:0.2f}".format(line)
+
         print line
 
         if num not in self.files:
@@ -17,7 +20,7 @@ class AnswerPrinter:
         if nl:
             line += '\n'
 
-        f.write(line)
+        f.write(str(line))
 
 
 printer = AnswerPrinter()
