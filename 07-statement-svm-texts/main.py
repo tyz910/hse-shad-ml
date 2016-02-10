@@ -4,7 +4,7 @@ import numpy as np
 from sklearn import datasets, grid_search
 from sklearn.svm import SVC
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.cross_validation import KFold, cross_val_score
+from sklearn.cross_validation import KFold
 
 import sys
 sys.path.append("..")
