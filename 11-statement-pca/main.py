@@ -1,11 +1,12 @@
 # coding=utf-8
 import pandas
 from sklearn.decomposition import PCA
+from numpy import corrcoef
 
 import sys
 sys.path.append("..")
 from shad_util import print_answer
-from numpy import corrcoef
+
 
 # 1. Загрузите данные close_prices.csv. В этом файле приведены цены акций 30 компаний на закрытии торгов за каждый
 # день периода.
