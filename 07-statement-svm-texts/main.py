@@ -36,12 +36,7 @@ model = SVC(kernel='linear', random_state=241)
 gs = grid_search.GridSearchCV(model, grid, scoring='accuracy', cv=cv)
 gs.fit(vectorizer.transform(X), y)
 
-score = 0
-C = 0
-for attempt in gs.grid_scores_:
-    if attempt.mean_validation_score > score:
-        score = attempt.mean_validation_score
-        C = attempt.parameters['C']
+C = gs.best_params_.get('C')
 
 # 4. Обучите SVM по всей выборке с оптимальным параметром C, найденным на предыдущем шаге.
 
